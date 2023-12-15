@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useFirebase } from "../context/Firebase";
@@ -9,6 +9,14 @@ const ListingPage = () =>{
     const [isbnNumber,setIsbnNumber] = useState("");
     const [price,setPrice] = useState("");
     const [coverPic,setCoverPic] = useState("");
+    useEffect(()=>{
+        if(firebase.isLoggedIn)
+        handleSubmit();
+    },[firebase]);
+    // console.log(books) 
+        if(!firebase.isLoggedIn){
+            return <h1>Please Login</h1>
+        }
 
     const handleSubmit = async(e) =>{
         e.preventDefault();

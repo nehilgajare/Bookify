@@ -45,6 +45,8 @@ const LoginPage = () => {
             </Form>
             <h1 className="mt-5 mb-5">OR</h1>
             <Button variant="danger" onClick={firebase.signInUsingGoogle}>Signin with Google</Button>
+            <hr></hr>
+            if account is not created yet <a href="/register">Register here</a>
         </div>
     )
 }

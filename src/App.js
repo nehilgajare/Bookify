@@ -8,11 +8,13 @@ import RegisterPage from "./pages/Register";
 import LoginPage from "./pages/Login";
 import ListingPage from "./pages/List";
 import HomePage from "./pages/Home";
-
+import OrdersPage from "./pages/ViewOrders";
+import BookDetailPage from "./pages/Details";
+import ViewOrderDetails from "./pages/ViewOrderDetail";
 //CSS
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
-import BookDetailPage from "./pages/Details";
+
 
 
 
@@ -27,6 +29,8 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/book/list" element={<ListingPage />} />
         <Route path="/book/view/:bookId" element={<BookDetailPage />} />
+        <Route path="/book/orders" element={<OrdersPage />} />
+        <Route path="/books/orders/:bookId" element={<ViewOrderDetails />} />
       </Routes>
     </div>
     

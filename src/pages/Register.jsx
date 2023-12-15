@@ -41,7 +41,8 @@ const RegisterPage = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control onChange={e => setPassword(e.target.value)} value={password} type="password" placeholder="Password" />
                 </Form.Group>
-                
+                If account is already created . <a href="/login">Login</a>
+                <hr></hr>
                 <Button variant="primary" type="submit">
                     Create Account
                 </Button>
