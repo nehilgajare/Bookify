@@ -11,7 +11,7 @@ const BookDetailPage = () => {
     const [qty, setQty] = useState(1);
     const [data, setData] = useState(null);
     const [url, setURL] = useState(null);
-    console.log(data)
+    // console.log(data)
     useEffect(() => {
         firebase.getBookById(params.bookId).then(value => setData(value.data()))
     }, [])
@@ -22,8 +22,8 @@ const BookDetailPage = () => {
         }
     }, [data])
     const placeOrder = async() => {
-        const result = await firebase.placeOrder(params.bookId,qty)
-        console.log("Order placed",result)
+        await firebase.placeOrder(params.bookId,qty)
+        alert("Order placed")
     }
     if (data == null) return <h1>Loading...</h1>
     return <div className='container mt-5'>

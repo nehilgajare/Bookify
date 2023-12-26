@@ -40,7 +40,7 @@ export const FirebaseProvider = (props) => {
     const signInUserWithEmailandPassword = (email, password) =>
         signInWithEmailAndPassword(firebaseAuth, email, password);
     const signInUsingGoogle = () => signInWithPopup(firebaseAuth,googleProvider);
-    console.log("User",user)
+    // console.log("User",user)
     const handleCreateNewListing = async(name,isbn,price,cover) => {
         const imageRef=ref(storage,`uploads/images/${Date.now()}-${cover.name}`);
         const uploadResult = await uploadBytes(imageRef,cover);

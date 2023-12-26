@@ -20,9 +20,9 @@ const RegisterPage = () => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        console.log("Logging a user")
-        const result = await firebase.signupUserWithEmailandPassword(email,password);
-        console.log("Successful ", result)
+        // console.log("Logging a user")
+        await firebase.signupUserWithEmailandPassword(email,password);
+        alert("Login Successful ")
     };
     console.log(firebase)
 

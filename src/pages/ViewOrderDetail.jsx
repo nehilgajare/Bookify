@@ -10,7 +10,7 @@ const ViewOrderDetails = () => {
     useEffect(() => {
         firebase.getOrders(params.bookId).then((orders) => setOrders(orders.docs))
     }, [])
-    console.log(params)
+    // console.log(params)
     return (
         <div className="container mt-3">
             <h1>Orders</h1>

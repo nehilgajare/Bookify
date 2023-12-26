@@ -20,9 +20,9 @@ const LoginPage = () => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        console.log("Login in a user")
-        const result = await firebase.signInUserWithEmailandPassword(email,password);
-        console.log("Successful ", result)
+        // console.log("Login in a user")
+        await firebase.signInUserWithEmailandPassword(email,password);
+        alert("Login Successful ")
     };
     // console.log(firebase)
 
