@@ -27,6 +27,7 @@ const RegisterPage = () => {
     console.log(firebase)
 
     return (
+        <div className="bg-gray-500 min-h-screen py-10">
         <div className="container mt-5"> 
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -47,6 +48,7 @@ const RegisterPage = () => {
                     Create Account
                 </Button>
             </Form>
+        </div>
         </div>
     )
 }

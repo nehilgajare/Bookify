@@ -1,4 +1,5 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import { useFirebase } from "../context/Firebase";
 import { useEffect,useState } from "react";
 import BookCard from "../components/Card";
@@ -14,10 +15,19 @@ const OrdersPage = () => {
             return <h1>Please Login</h1>
         }
     return(
-        <div>
-            {books.map((book) => (<BookCard link={`/books/orders/${book.id}`} key={book.id} id={book.id} {...book.data()} />))}
-            
-        </div>
+        <div className="bg-gray-500 min-h-screen py-10">
+      <div className="container mx-auto flex justify-center">
+        <Container>
+          <Row>
+            {books.map((book) => (
+              <Col sm={12} md={6} lg={4} key={book.id} className="flex justify-center">
+                <BookCard link={`/book/view/${book.id}`} {...book.data()} />
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </div>
+    </div>
     )
 }
 export default OrdersPage;

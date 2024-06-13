@@ -27,6 +27,7 @@ const LoginPage = () => {
     // console.log(firebase)
 
     return (
+        <div className="bg-gray-500 min-h-screen py-10">
         <div className="container mt-5"> 
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -47,6 +48,7 @@ const LoginPage = () => {
             <Button variant="danger" onClick={firebase.signInUsingGoogle}>Signin with Google</Button>
             <hr></hr>
             if account is not created yet <a href="/register">Register here</a>
+        </div>
         </div>
     )
 }

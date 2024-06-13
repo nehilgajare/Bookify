@@ -24,6 +24,7 @@ const ListingPage = () =>{
         alert("Added book to Listings")
     }
     return(
+        <div className="bg-gray-500 min-h-screen py-10">
         <div className="container mt-5"> 
             <Form onSubmit={(e) => handleSubmit(e)}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -48,7 +49,7 @@ const ListingPage = () =>{
                     Create
                 </Button>
             </Form>
-           
+            </div>   
         </div>
     )
 }

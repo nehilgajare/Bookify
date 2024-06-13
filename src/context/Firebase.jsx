@@ -35,6 +35,7 @@ export const FirebaseProvider = (props) => {
             else setUser(null)
         })
     },[])
+    
     const signupUserWithEmailandPassword = (email, password) =>
         createUserWithEmailAndPassword(firebaseAuth, email, password);
     const signInUserWithEmailandPassword = (email, password) =>

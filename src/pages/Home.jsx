@@ -1,28 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useFirebase } from "../context/Firebase";
-import { useEffect } from "react";
-import { useState } from "react";
 import BookCard from "../components/Card";
-import { Container, Row, Col, CardGroup } from 'react-bootstrap';
+import { Container, Row, Col } from "react-bootstrap";
 
 const HomePage = () => {
-    const firebase = useFirebase();
-    const [books, setBooks] = useState([]);
+  const firebase = useFirebase();
+  const [books, setBooks] = useState([]);
 
-    useEffect(() => {
-        firebase.listAllBooks().then((books) => setBooks(books.docs))
-    })
-    return <div className="container mt-5 justify-content-center">
+  useEffect(() => {
+    firebase.listAllBooks().then((books) => setBooks(books.docs));
+  }, [firebase]);
+
+  return (
+    <div className="bg-gray-400 min-h-screen py-10">
+      <div className="container mx-auto flex justify-center">
         <Container>
-            <Row>
-                {books.map((book) => (
-                    <Col sm={2} md={5} key={book.id}>
-                        <BookCard link={`/book/view/${book.id}`} {...book.data()} />
-                    </Col>
-                ))}
-            </Row>
+          <Row>
+            {books.map((book) => (
+              <Col sm={12} md={6} lg={4} key={book.id} className="flex justify-center">
+                <BookCard link={`/book/view/${book.id}`} {...book.data()} />
+              </Col>
+            ))}
+          </Row>
         </Container>
-    </div>;
+      </div>
+    </div>
+  );
+};
 
-}
 export default HomePage;
